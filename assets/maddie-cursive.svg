@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#ffd166"/>
+    </linearGradient>
+    <filter id="ds" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <style type="text/css">
+    .logo-text{font-family: 'Brush Script MT', 'Segoe Script', Pacifico, cursive; font-size:96px; fill:url(#g); stroke:#6b3b00; stroke-width:3; paint-order:stroke; filter:url(#ds);}
+  </style>
+  <text x="0" y="110" class="logo-text">Maddie Rubin</text>
+  <!-- decorative sparkle -->
+  <g transform="translate(780,20)" opacity="0.9">
+    <circle cx="0" cy="0" r="6" fill="#fff" />
+    <path d="M-2,0 L2,0 M0,-2 L0,2" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>
