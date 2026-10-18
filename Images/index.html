@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Images | Maddie Rubin</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #fff;
+        color: #1c1c1c;
+        font-family: Garamond, "Times New Roman", serif;
+      }
+      body.menu-open { overflow: hidden; }
+      .site-header {
+        position: fixed;
+        z-index: 71;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        height: 55px;
+        padding: 0 12px;
+        background: #fff;
+      }
+      .menu-button {
+        display: grid;
+        place-content: center;
+        gap: 4px;
+        width: 24px;
+        height: 28px;
+        padding: 0;
+        border: 0;
+        color: #1c1c1c;
+        background: transparent;
+        cursor: pointer;
+      }
+      .menu-button svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        top: 0.5px;
+      }
+      .brand {
+        color: inherit;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        padding: 16px 12px;
+        text-decoration: none;
+      }
+      .desktop-nav { display: none; }
+      .menu-backdrop {
+        position: fixed;
+        z-index: 69;
+        inset: 0;
+        background: transparent;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+      }
+      body.menu-open .menu-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .site-nav {
+        position: fixed;
+        z-index: 70;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: min(250px, 85vw);
+        padding: 72px 0 0;
+        overflow-y: auto;
+        background: #fff;
+        color: #000;
+        font-size: 24px;
+        transform: translateX(-100%);
+        transition: transform 180ms ease;
+      }
+      body.menu-open .site-nav { transform: translateX(0); }
+      .site-nav a {
+        display: block;
+        margin: 0;
+        padding: 0 0 0 12px;
+        color: #000;
+        font-size: 24px;
+        line-height: normal;
+        text-decoration: none;
+      }
+      .site-nav a + a { margin-top: 16px; }
+      .site-nav a:hover,
+      .site-nav a:focus,
+      .site-nav a[aria-current="page"] { text-decoration: underline; }
+      .site-nav a[aria-current="page"] { font-weight: 700; }
+      main {
+        width: 90%;
+        margin: 80px auto 0;
+        padding: 14px 8px 0;
+      }
+      main p,
+      .email {
+        margin: 0;
+        font-size: 22.67px;
+        line-height: 1.5;
+      }
+      .film {
+        display: block;
+        width: 100%;
+        max-width: 760px;
+        height: auto;
+        margin: 0;
+        background: #000;
+      }
+      .email {
+        display: inline-block;
+        margin-top: 30px;
+        font-style: italic;
+        text-decoration: none;
+        color: inherit;
+      }
+      .instagram {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        margin-top: 24px;
+        background: #fff;
+      }
+      .instagram img {
+        display: block;
+        width: 28px;
+        height: 28px;
+      }
+      @media (min-width: 700px) {
+        .site-header { padding: 0 16px; }
+        .menu-button,
+        .menu-backdrop,
+        .site-nav { display: none; }
+        .desktop-nav {
+          display: flex;
+          align-items: center;
+          gap: 26px;
+          margin-left: auto;
+        }
+        .desktop-nav a {
+          color: inherit;
+          font-size: 24px;
+          line-height: 1.15;
+          text-decoration: none;
+        }
+        .desktop-nav a:hover,
+        .desktop-nav a:focus { text-decoration: underline; }
+        .desktop-nav a[aria-current="page"] { font-weight: 700; }
+        main {
+          width: 80%;
+          max-width: 1155px;
+        }
+        main p,
+        .email { font-size: 24px; }
+      }
+      a[href="/Images"]:hover,
+      a[href="/Images"]:focus,
+      a[href="/Images"]:active,
+      a[href="/Images"][aria-current="page"] { text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <g transform="translate(12,12)">
+            <path d="M-9 -5 L9 -5" fill="none" stroke-width="2" />
+            <path d="M-9 0 L9 0" fill="none" stroke-width="2" />
+            <path d="M-9 5 L9 5" fill="none" stroke-width="2" />
+          </g>
+        </svg>
+      </button>
+      <a class="brand" href="/About">Maddie Rubin</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="/About">About</a>
+        <a href="/Writing">Writing</a>
+        <a href="/Images" aria-current="page">Images</a>
+        <a href="https://github.com/mrubin02">Code</a>
+      </nav>
+    </header>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation" aria-hidden="true">
+      <a href="/About">About</a>
+      <a href="/Writing">Writing</a>
+      <a href="/Images" aria-current="page">Images</a>
+      <a href="https://github.com/mrubin02">Code</a>
+    </nav>
+
+    <main>
+      <video class="film" controls playsinline preload="metadata" aria-label="Rubin Process" poster="/assets/rubin-process-poster.jpg">
+        <source src="/assets/rubin_process.mp4" type="video/mp4" />
+      </video>
+      <a class="email" href="mailto:maddierubin02@gmail.com">maddierubin02@gmail.com</a>
+      <a class="instagram" href="https://www.instagram.com/maddierubin" aria-label="Instagram"><img src="https://ssl.gstatic.com/atari/images/sociallinks/instagram_black_28dp.png" alt="" width="28" height="28" /></a>
+    </main>
+    <script>
+      const menuButton = document.querySelector('.menu-button');
+      const siteNav = document.querySelector('.site-nav');
+      const backdrop = document.querySelector('.menu-backdrop');
+
+      function setMenuOpen(open) {
+        document.body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+        siteNav.setAttribute('aria-hidden', String(!open));
+        siteNav.style.transform = open ? 'translateX(0)' : 'translateX(-100%)';
+      }
+
+      menuButton.addEventListener('click', () => {
+        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      });
+      backdrop.addEventListener('click', () => setMenuOpen(false));
+      siteNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenuOpen(false));
+      });
+    </script>
+  </body>
+</html>
