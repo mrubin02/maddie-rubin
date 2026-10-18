@@ -1,4 +1,5 @@
 * { box-sizing: border-box; }
+html { zoom: 1.1; }
 body {
   margin: 0;
   background: #fff;
