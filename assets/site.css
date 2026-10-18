@@ -112,6 +112,19 @@ main p a { color: inherit; }
   margin: 0;
   background: #000;
 }
+.gallery {
+  max-width: 760px;
+  margin-top: 16px;
+  columns: 1;
+  column-gap: 16px;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  break-inside: avoid;
+}
 .email {
   display: inline-block;
   margin-top: 30px;
@@ -141,12 +154,9 @@ main p a { color: inherit; }
 .portrait {
   display: block;
   width: 100%;
-  max-width: 360px;
+  max-width: 340px;
   height: auto;
-  aspect-ratio: 0.861;
   margin: 0 auto;
-  object-fit: cover;
-  object-position: 70.4% 50%;
 }
 @media (min-width: 700px) {
   .site-header { padding: 0 16px; }
@@ -174,6 +184,7 @@ main p a { color: inherit; }
   }
   main p,
   .email { font-size: 24px; }
+  .gallery { columns: 2; }
   .about {
     flex-direction: row;
     align-items: center;
